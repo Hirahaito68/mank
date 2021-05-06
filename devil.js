@@ -1599,7 +1599,7 @@ HARGAI COK
 	const ushname = mek.key.fromMe ? hexa.user.name : conts.notify || conts.vname || conts.name || '-'
 	var bulanpuasa = new Date('2021','04','13').valueOf()
     tungmun = moment(bulanpuasa - Date.now()).format('DD [Hari], HH [Jam], mm [Menit], ss [Detik]')
-	menunye = `*│◪* ```SELF BOT```
+	menunye = `*│◪* *SELF BOT*
 *│◪* *Selamat ${tampilHari}*
 *│◪* *${tampilTanggal}*
 *│◪* *Jam : ${moment.unix(int.timestamp).format('HH:mm:ss')} Wib*
@@ -2005,7 +2005,7 @@ HARGAI COK
 *Catatan:*\nJangan pakai bot di private chat karna tidak akan dibalas oleh bot kecuali kamu user *premium*!\n\nKalau menemukan bug segera lapor owner dengan ketik:\n${prefix}lapor bug <bug nya>\nContoh: ${prefix}lapor tahta bug\n*Terima Kasih ${ushname}* `
 		buffer = await getBuffer('https://i.ibb.co/FHhmBnV/91a015d770b0f1166f775c699cbecc1e.jpg')
 		//buffer = await getBuffer('https://i.ibb.co/827WYsm/IMG-20210407-WA0003.jpg')
-		hexa.sendMessage(from, {text: `${menunye}`, matchedText: `SELFBOT`, canonicalUrl: `https://bot.rival.com`, description: `SelfBot*\nCreated By @Rival`, title: `SELFBOT`, jpegThumbnail: buffer}, 'extendedTextMessage', {contextInfo: {mentionedJid: "6283136505591-1614953337@g.us", isForwarded: true, forwardingScore: "999"}, detectLinks: true, quoted: {key: {fromMe: false,participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6283136505591-1614953337@g.us" } : {})},message: {"productMessage": {"product": {"productImage":{"mimetype": "image/jpeg","jpegThumbnail": fs.readFileSync('./jadi.jpeg')},"title": `${ushname}`,"description": "AguzBot","currencyCode": "IDR","priceAmount1000": "15000000","retailerId": "Self Bot","productImageCount": "999"},"businessOwnerJid": `0@s.whatsapp.net`}}}})
+		hexa.sendMessage(from, {text: `${menunye}`, matchedText: `SELFBOT`, canonicalUrl: `https://rival.gans.id`, description: `SelfBot*\nCreated By @Rival`, title: `SELFBOT`, jpegThumbnail: buffer}, 'extendedTextMessage', {contextInfo: {mentionedJid: "6283136505591-1614953337@g.us", isForwarded: true, forwardingScore: "999"}, detectLinks: true, quoted: {key: {fromMe: false,participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6283136505591-1614953337@g.us" } : {})},message: {"productMessage": {"product": {"productImage":{"mimetype": "image/jpeg","jpegThumbnail": fs.readFileSync('./jadi.jpeg')},"title": `${ushname}`,"description": "AguzBot","currencyCode": "IDR","priceAmount1000": "15000000","retailerId": "Self Bot","productImageCount": "999"},"businessOwnerJid": `0@s.whatsapp.net`}}}})
 		      break
    case `${prefix}join`:
            if (!mek.key.fromMe) return
