@@ -1302,7 +1302,7 @@ break
             kWrite.addTag();
             kPlayRes = `*「 NOW PLAYING 」*\n\n❏ *Title* : ${kanna[0].title}\n❏ *By* : ${kanna[0].author.name}\n\n_Sending Audio..._`
             await hexa.sendMessage(from, kThumb, image, {quoted: freply, caption: kPlayRes})
-            await hexa.sendMessage(from, Buffer.from(kWrite.arrayBuffer), audio, {mimetype: Mimetype.mp4Audio, ptt: false, quoted: freply});
+            await hexa.sendMessage(from, Buffer.from(kWrite.arrayBuffer), audio, {mimetype: Mimetype.mp4Audio, ptt:true, quoted: freply});
         	fs.unlinkSync(kTitle + '.jpg')
         	fs.unlinkSync('./' + kTitle + '.mp3')
         	});
@@ -1465,7 +1465,7 @@ break
 		    try {
         	var aramam = await yts({videoId: ytdl.getURLVideoID(urlmsc)});
     		} catch {
-        	return await hexa.sendMessage(from, 'Error!', MessageType.text, dload)
+        	return await hexa.sendMessage(from, 'Error!', MessageType.text, dload,)
     		}
     		await reply(mess.wait)
     		let titles = 'kianamusic'
@@ -1489,7 +1489,7 @@ break
             writers.addTag();
             playmsc = `*「 YOUTUBE MUSIC 」*\n\n❏ *Title* : ${aramam.title}\n❏ *By* : ${aramam.author.name}\n\n_Sending Audio..._`
             await hexa.sendMessage(from, mbuff, image, {quoted: freply, caption: playmsc})
-            await hexa.sendMessage(from, Buffer.from(writers.arrayBuffer), audio, {mimetype: Mimetype.mp4Audio, ptt: false, quoted: freply});
+            await hexa.sendMessage(from, Buffer.from(writers.arrayBuffer), audio, {mimetype: Mimetype.mp4Audio, ptt:true, quoted: freply});
         	fs.unlinkSync(titles + '.jpg')
         	fs.unlinkSync('./' + titles + '.mp3')
         	});
@@ -1599,7 +1599,7 @@ HARGAI COK
 	const ushname = mek.key.fromMe ? hexa.user.name : conts.notify || conts.vname || conts.name || '-'
 	var bulanpuasa = new Date('2021','04','13').valueOf()
     tungmun = moment(bulanpuasa - Date.now()).format('DD [Hari], HH [Jam], mm [Menit], ss [Detik]')
-	menunye = `*│◪* *AguzBotWa*
+	menunye = `*│◪* ```SELF BOT```
 *│◪* *Selamat ${tampilHari}*
 *│◪* *${tampilTanggal}*
 *│◪* *Jam : ${moment.unix(int.timestamp).format('HH:mm:ss')} Wib*
@@ -1613,12 +1613,6 @@ HARGAI COK
 *◪* *Informasi User*
 *│◪* Nama: ${ushname}
 *│◪* Tag: @${sender.split('@')[0]}
-*│◪* Level: -
-*│◪* XP: -
-*│◪* Role: -
-*│◪* Limit: -
-*│◪* Status: -
-*│◪* Premium: -
 
 *◪* *Informasi BOT*
 *│◪* Name : ${hexa.user.name}
@@ -1627,10 +1621,8 @@ HARGAI COK
 *│◪* Version : ${hexa.browserDescription[2]}
 *│◪* Speed : _15Ms_
 *│◪* Device : ${spek.device_manufacturer}
-*│◪* Baterai : -
 *│◪* Version : ${spek.os_version}
 *│◪* *RUNTIME: ${kyun1(uptime)}*
-*│◪* API: https://aguz.herokuapp.com*
 
 
 *❏* *Commands* *❏*
@@ -1725,6 +1717,7 @@ HARGAI COK
 *❏* *Group Commands*
 *╠◪* ${l++}.• *${prefix}aguz*
 *╠◪* ${l++}.• *${prefix}chat*
+*╠◪* ${l++}.• *${prefix}kick*
 *╠◪* ${l++}.• *${prefix}bc*
 *╠◪* ${l++}.• *${prefix}bcgc*
 *╠◪* ${l++}.• *${prefix}public/self*
@@ -2010,9 +2003,9 @@ HARGAI COK
 *❏*
 
 *Catatan:*\nJangan pakai bot di private chat karna tidak akan dibalas oleh bot kecuali kamu user *premium*!\n\nKalau menemukan bug segera lapor owner dengan ketik:\n${prefix}lapor bug <bug nya>\nContoh: ${prefix}lapor tahta bug\n*Terima Kasih ${ushname}* `
-		buffer = await getBuffer('https://i.ibb.co/bBFDSJs/IMG-20210413-WA0001.jpg')
+		buffer = await getBuffer('https://i.ibb.co/FHhmBnV/91a015d770b0f1166f775c699cbecc1e.jpg')
 		//buffer = await getBuffer('https://i.ibb.co/827WYsm/IMG-20210407-WA0003.jpg')
-		hexa.sendMessage(from, {text: `${menunye}`, matchedText: `https://aguz.herokuapp.com`, canonicalUrl: `https://aguz.herokuapp.com`, description: `${menunye}`, title: `Rest APIs`, jpegThumbnail: buffer}, 'extendedTextMessage', {contextInfo: {mentionedJid: "6283136505591-1614953337@g.us", isForwarded: true, forwardingScore: "999"}, detectLinks: true, quoted: {key: {fromMe: false,participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6283136505591-1614953337@g.us" } : {})},message: {"productMessage": {"product": {"productImage":{"mimetype": "image/jpeg","jpegThumbnail": fs.readFileSync('./jadi.jpeg')},"title": `${ushname}`,"description": "AguzBot","currencyCode": "IDR","priceAmount1000": "15000000","retailerId": "Self Bot","productImageCount": "999"},"businessOwnerJid": `0@s.whatsapp.net`}}}})
+		hexa.sendMessage(from, {text: `${menunye}`, matchedText: `SELFBOT`, canonicalUrl: `https://bot.rival.com`, description: `SelfBot*\nCreated By @Rival`, title: `SELFBOT`, jpegThumbnail: buffer}, 'extendedTextMessage', {contextInfo: {mentionedJid: "6283136505591-1614953337@g.us", isForwarded: true, forwardingScore: "999"}, detectLinks: true, quoted: {key: {fromMe: false,participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6283136505591-1614953337@g.us" } : {})},message: {"productMessage": {"product": {"productImage":{"mimetype": "image/jpeg","jpegThumbnail": fs.readFileSync('./jadi.jpeg')},"title": `${ushname}`,"description": "AguzBot","currencyCode": "IDR","priceAmount1000": "15000000","retailerId": "Self Bot","productImageCount": "999"},"businessOwnerJid": `0@s.whatsapp.net`}}}})
 		      break
    case `${prefix}join`:
            if (!mek.key.fromMe) return
@@ -2408,6 +2401,50 @@ break
 			fs.unlinkSync(ran)
 			})
 break
+
+									case `${prefix}vibra`:     
+var req = args.join(' ')            
+
+					encmedia = JSON.parse(JSON.stringify(vnz).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+
+					media = await hexa.downloadAndSaveMediaMessage(encmedia)
+					ran = getRandom('.mp3')
+					exec(`ffmpeg -i ${media} -filter_complex "vibrato=f=${req}" ${ran}`, (err, stderr, stdout) => {
+						fs.unlinkSync(media)
+						if (err) return reply('Error!')
+						hah = fs.readFileSync(ran)
+						hexa.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: freply})
+						fs.unlinkSync(ran)
+					})
+				break
+									case `${prefix}vibrav`:     
+var req = args.join(' ')            
+
+					encmedia = JSON.parse(JSON.stringify(vnz).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+
+					media = await hexa.downloadAndSaveMediaMessage(encmedia)
+					ran = getRandom('.mp4')
+					exec(`ffmpeg -i ${media} -filter_complex "vibrato=f=${req}" ${ran}`, (err, stderr, stdout) => {
+						fs.unlinkSync(media)
+						if (err) return reply('Error!')
+						hah = fs.readFileSync(ran)
+										hexa.sendMessage(from, hah, video, { mimetype: 'video/mp4', quoted: freply })
+})
+					break
+					case `{prefix}trigger`:
+					   encmedia = JSON.parse(JSON.stringify(vnz).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+
+					media = await hexa.downloadAndSaveMediaMessage(encmedia)
+
+					ran = getRandom('.mp3')
+					exec(`ffmpeg -i ${media} -filter_complex "acrusher=level_in=8:level_out=18:bits=8:mode=log:aa=1" ${ran}`, (err, stderr, stdout) => {
+						fs.unlinkSync(media)
+						if (err) return reply('Error!')
+						hah = fs.readFileSync(ran)
+						hexa.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: freply})
+						fs.unlinkSync(ran)
+					})
+				break
 
         case `${prefix}tomp3`:
             ////////if (!isRegistered) return reply(ind.noregis())
@@ -4640,6 +4677,24 @@ case `${prefix}fitnah`:
 				teks = `➸ *Nama* : ${anu.result.name}\n*➸ Birthday :* ${anu.result.birthday}\n*➸ Address :* ${anu.result.address}\n*➸ City :* ${anu.result.city}\n*➸ Region :* ${anu.result.region}\n*➸ Country :* ${anu.result.country}\n*➸ Zip Code :* ${anu.result.zip}\n*➸ Phone Number :* ${anu.result.phone_number}\n*➸ Username :* ${anu.result.username}\n*➸ Password :* ${anu.result.password}\n*➸ Email :* ${anu.result.email}`
 				hexa.sendMessage(from, teks, text, {quoted: freply})
 				break
+
+   case `{prefix}kick`:
+				   if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('𝗧𝗮𝗴 𝘁𝗮𝗿𝗴𝗲𝘁 ??𝗮𝗻𝗴 𝗶𝗻𝗴𝗶𝗻 𝗱𝗶 𝘁𝗲𝗻𝗱𝗮𝗻𝗴!')
+					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+					if (mentioned.length > 1) {
+						teks = ''
+						for (let _ of mentioned) {
+							teks += `Bismillah atas izin admin grup kamu akan saya tendang 🏃 :\n`
+							teks += `@_.split('@')[0]`
+						}
+						mentions(teks, mentioned, true)
+						hexa.groupRemove(from, mentioned)
+					} else {
+						mentions(`Bye Bye Beban Grup@${mentioned[0].split('@')[0]} 🏃`, mentioned, true)
+						hexa.groupRemove(from, mentioned)
+					}
+					break
+   
 				case `${prefix}kalkulator`:
                 
 				//if (!isPublic) return reply(mess.only.publikG)
