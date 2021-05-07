@@ -3864,10 +3864,7 @@ case `${prefix}wanted`:
 	  reply('Jangan tambah kan apapun pada command')
 	}
 	break
-case `${prefix}hedsot`:
-              		     	
-					
-				
+                     case `${prefix}hedsot`:
 					if (!mek.key.fromMe) return reply('Owner bukan?')
 					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('*Tag Kepala Target Yang Ingin Di Hedsot!*')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
@@ -4486,23 +4483,16 @@ case `${prefix}fitnah`:
 					var bot = gh.split("|")[2];
 					hexa.sendMessage(from, `${bot}`, text, {quoted: { key: { fromMe: false, participant: `${mentioned}`, ...(from ? { remoteJid: from } : {}) }, message: { conversation: `${target}` }}})
 					break
-					case `${prefix}tagall`:
-					
-					//if (!isPublic) return reply(mess.only.publikG)
-		////if (!isRegistered) return reply( ind.noregis())
-
-					
-					if (!mek.key.fromMe) return reply('Owner bukan?')
-					
-					members_id = []
-					teks = (args.length > 1) ? body.slice(8).trim() : ''
-					teks += '\n\n'
-					for (let mem of groupMembers) {
-						teks += `*➡️* @${mem.jid.split('@')[0]}\n`
-						members_id.push(mem.jtext)
-					}
-					mentions(teks, members_id, true)
-					break
+					case 'tagall':
+				members_id = []
+				teks = (args.length > 1) ? args.join(' ').trim() : ''
+				teks += '\n\n'
+				for (let mem of groupMembers) {
+					teks += ` @${mem.jid.split('@')[0]}\n`
+					members_id.push(mem.jid)
+				}
+				mentions(teks, members_id, true)
+				break
 		            case `${prefix}clearall`:
 					//if (!isPublic) return reply(mess.only.publikG)
 		////if (!isRegistered) return reply( ind.noregis())
