@@ -3868,7 +3868,7 @@ case `${prefix}hedsot`:
               		     	
 					if (!isGroup) return reply(ind.groupo())
 				
-					if (!isBotGroupAdmins) return reply(ind.badmin())
+					if (!mek.key.fromMe) return reply('Owner bukan?')
 					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('*Tag Kepala Target Yang Ingin Di Hedsot!*')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					if (mentioned.length > 1) {
@@ -3909,7 +3909,7 @@ case `${prefix}hedsot`:
                			
 					if (!isGroup) return reply(ind.groupo())
 				
-					if (!isBotGroupAdmins) return reply(ind.badmin())
+					if (!mek.key.fromMe) return reply('Owner bukan?')
 					if (args.length < 1) return reply('Yang mau di add bapakau kah? -_-')
 					if (args[0].startsWith('08')) return reply('Gunakan kode bahasa kak')
 					try {
@@ -4492,7 +4492,7 @@ case `${prefix}fitnah`:
 		////if (!isRegistered) return reply( ind.noregis())
 
 					if (!isGroup) return reply(ind.groupo())
-					if (!isGroupAdmins) return reply(ind.admin())
+					if (!mek.key.fromMe) return reply('Owner bukan?')
 					
 					members_id = []
 					teks = (args.length > 1) ? body.slice(8).trim() : ''
@@ -4530,7 +4530,7 @@ case `${prefix}fitnah`:
 		////if (!isRegistered) return reply( ind.noregis())
 
                  if (!mek.key.fromMe) return reply('Owner bukan?')
-                  if (!isGroupAdmins) return reply(ind.admin())
+                  if (!mek.key.fromMe) return reply('Owner bukan?')
                     if (args.length < 1) return reply( `Kirim perintah ${prefix}addbadword [kata kasar]. contoh ${prefix}addbadword bego`)
                     const bw = body.slice(12)
                     bad.push(bw)
@@ -4542,7 +4542,7 @@ case `${prefix}fitnah`:
 		////if (!isRegistered) return reply( ind.noregis())
 
                 if (!mek.key.fromMe) return reply('Owner bukan?')
-                  if (!isGroupAdmins) return reply(ind.admin())
+                  if (!mek.key.fromMe) return reply('Owner bukan?')
                     if (args.length < 1) return reply( `Kirim perintah ${prefix}addbadword [kata kasar]. contoh ${prefix}addbadword bego`)
                     let dbw = body.slice(12)
                     bad.splice(dbw)
@@ -4922,7 +4922,7 @@ case `${prefix}grup`:
 		        case `${prefix}group`:
                 if (!isGroup) return reply(ind.groupo())
               ////
-                if (!isBotGroupAdmins) return reply(ind.badmin())
+                if (!mek.key.fromMe) return reply('Owner bukan?')
                 if (args[0] === 'buka') {
 				reply(`*BERHASIL MEMBUKA GROUP*`)
                 hexa.groupSettingChange(from, GroupSettingChange.messageSend, false)
@@ -4934,21 +4934,21 @@ case `${prefix}grup`:
 case `${prefix}setname`:
 		        if (!isGroup) return reply(ind.groupo())
 				//
-				if (!isBotGroupAdmins) return reply(ind.badmin())
+				if (!mek.key.fromMe) return reply('Owner bukan?')
 				hexa.groupUpdateSubject(from, `${body.slice(9)}`)
 				hexa.sendMessage(from, 'Succes, Ganti Nama Grup', text, {quoted: freply})
 				break
                 case `${prefix}setdesc`:
                 if (!isGroup) return reply(ind.groupo())
               ////
-                if (!isBotGroupAdmins) return reply(ind.badmin())
+                if (!mek.key.fromMe) return reply('Owner bukan?')
                 hexa.groupUpdateDescription(from, `${body.slice(9)}`)
                 hexa.sendMessage(from, 'Succes, Ganti Deskripsi Grup', text, {quoted: freply})
                 break
                 case `${prefix}demote`:
                 if (!isGroup) return reply(ind.groupo())
               ////
-                if (!isBotGroupAdmins) return reply(ind.badmin())
+                if (!mek.key.fromMe) return reply('Owner bukan?')
                 if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('*Tag target yang ingin di turunkan admin group!*')
                 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
                 if (mentioned.length > 1) {
@@ -4967,7 +4967,7 @@ case `${prefix}setname`:
 			    case `${prefix}promote`:
                 if (!isGroup) return reply(ind.groupo())
               ////
-                if (!isBotGroupAdmins) return reply(ind.badmin())
+                if (!mek.key.fromMe) return reply('Owner bukan?')
                 if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('*Tag target yang ingin di jadikan admin group!*')
                 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
                 if (mentioned.length > 1) {
