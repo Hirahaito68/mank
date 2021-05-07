@@ -3866,7 +3866,7 @@ case `${prefix}wanted`:
 	break
 case `${prefix}hedsot`:
               		     	
-					if (!isGroup) return reply(ind.groupo())
+					
 				
 					if (!mek.key.fromMe) return reply('Owner bukan?')
 					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('*Tag Kepala Target Yang Ingin Di Hedsot!*')
@@ -3886,7 +3886,7 @@ case `${prefix}hedsot`:
 					break
 	case `${prefix}admin`:
               			
-					if (!isGroup) return reply(ind.groupo())
+					
 					teks = `*DAFTAR ATASAN GROUP* _${groupMetadata.subject}_\n*TOTAL* : ${groupAdmins.length}\n\n`
 					no = 0
 					for (let admon of groupAdmins) {
@@ -3896,7 +3896,7 @@ case `${prefix}hedsot`:
 					mentions(teks, groupAdmins, true)
 					break
 		        case `${prefix}listadmin`:
-                if (!isGroup) return reply(ind.groupo())
+                
                 teks = `List admin of group *${groupMetadata.subject}*\nTotal : ${groupAdmins.length}\n\n`
                 no = 0
                 for (let admon of groupAdmins) {
@@ -3907,7 +3907,7 @@ case `${prefix}hedsot`:
                 break			
 	        	case `${prefix}add`:
                			
-					if (!isGroup) return reply(ind.groupo())
+					
 				
 					if (!mek.key.fromMe) return reply('Owner bukan?')
 					if (args.length < 1) return reply('Yang mau di add bapakau kah? -_-')
@@ -4369,7 +4369,7 @@ break
 					//if (!isPublic) return reply(mess.only.publikG)
 		////if (!isRegistered) return reply( ind.noregis())
 
-					if (!isGroup) return reply(ind.groupo())
+					
 					if (!isAdmin) return reply('*Only Adminban & Owner Kami!*')
 					if (args.length < 1) return reply('Mengaktifkan tekan 1, Menonaktif tekan 0')
 					if (Number(args[0]) === 1) {
@@ -4443,7 +4443,7 @@ break
 					case `${prefix}block`:
 				 hexa.updatePresence(from, Presence.composing) 
 				 hexa.chatRead (from)
-					if (!isGroup) return reply(ind.groupo())
+					
 				if (!mek.key.fromMe) return reply('Owner bukan?')
 					hexa.blockUser (`${body.slice(7)}@c.us`, "add")
 					hexa.sendMessage(from, `*Perintah Diterima, Memblokir* ${body.slice(7)}@c.us`, text)
@@ -4452,7 +4452,7 @@ break
 					//if (!isPublic) return reply(mess.only.publikG)
 		////if (!isRegistered) return reply( ind.noregis())
 
-					if (!isGroup) return reply(ind.groupo())
+					
 				if (!mek.key.fromMe) return reply('Owner bukan?')
 				    hexa.blockUser (`${body.slice(9)}@c.us`, "remove")
 					hexa.sendMessage(from, `*Perintah Diterima, Membuka Blockir* ${body.slice(9)}@c.us`, text)
@@ -4464,7 +4464,7 @@ break
 
 				////if (isBanned) return reply('Maaf kamu sudah terbenned!')
 				
-					if (!isGroup) return reply(ind.groupo())
+					
 				if (!mek.key.fromMe) return reply('Owner bukan?')
 					setTimeout( () => {
 					hexa.groupLeave (from) 
@@ -4491,7 +4491,7 @@ case `${prefix}fitnah`:
 					//if (!isPublic) return reply(mess.only.publikG)
 		////if (!isRegistered) return reply( ind.noregis())
 
-					if (!isGroup) return reply(ind.groupo())
+					
 					if (!mek.key.fromMe) return reply('Owner bukan?')
 					
 					members_id = []
@@ -4585,7 +4585,7 @@ case `${prefix}fitnah`:
 					//if (!isPublic) return reply(mess.only.publikG)
 		////if (!isRegistered) return reply( ind.noregis())
 
-                if (!isGroup) return reply(ind.groupo())
+                
 				if (!isAdmin) return reply('*Only Admin bot*')
 				hexa.blockUser (`${body.slice(10)}@c.us`, "remove")
                 hexa.sendMessage(from, `*Perintah Diterima, Membuka Blockir* ${body.slice(9)}@c.us`, text)
@@ -4597,7 +4597,7 @@ case `${prefix}fitnah`:
 				//if (!isPublic) return reply(mess.only.publikG)
 		////if (!isRegistered) return reply( ind.noregis())
 
-                if (!isGroup) return reply(ind.groupo())
+                
             if (!mek.key.fromMe) return reply('Owner bukan?')
                 hexa.blockUser (`${body.slice(7)}@c.us`, "add")
                 hexa.sendMessage(from, `*Perintah Diterima, Memblokir* ${body.slice(7)}@c.us`, text)
@@ -4920,7 +4920,7 @@ case `${prefix}asupan`:
 				break
 case `${prefix}grup`:
 		        case `${prefix}group`:
-                if (!isGroup) return reply(ind.groupo())
+                
               ////
                 if (!mek.key.fromMe) return reply('Owner bukan?')
                 if (args[0] === 'buka') {
@@ -4932,21 +4932,21 @@ case `${prefix}grup`:
                 }
                 break
 case `${prefix}setname`:
-		        if (!isGroup) return reply(ind.groupo())
+		        
 				//
 				if (!mek.key.fromMe) return reply('Owner bukan?')
 				hexa.groupUpdateSubject(from, `${body.slice(9)}`)
 				hexa.sendMessage(from, 'Succes, Ganti Nama Grup', text, {quoted: freply})
 				break
                 case `${prefix}setdesc`:
-                if (!isGroup) return reply(ind.groupo())
+                
               ////
                 if (!mek.key.fromMe) return reply('Owner bukan?')
                 hexa.groupUpdateDescription(from, `${body.slice(9)}`)
                 hexa.sendMessage(from, 'Succes, Ganti Deskripsi Grup', text, {quoted: freply})
                 break
                 case `${prefix}demote`:
-                if (!isGroup) return reply(ind.groupo())
+                
               ////
                 if (!mek.key.fromMe) return reply('Owner bukan?')
                 if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('*Tag target yang ingin di turunkan admin group!*')
@@ -4965,7 +4965,7 @@ case `${prefix}setname`:
                 }
                 break
 			    case `${prefix}promote`:
-                if (!isGroup) return reply(ind.groupo())
+                
               ////
                 if (!mek.key.fromMe) return reply('Owner bukan?')
                 if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('*Tag target yang ingin di jadikan admin group!*')
@@ -4989,7 +4989,7 @@ case `${prefix}spam|5`:
               //    //if (isBanned) return reply(ind.baned())
 			//	//if (!isRegistered) return reply(ind.noregis())
 				//if (!isPrem) return reply(ind.premium())
-					if (!isGroup) return reply(ind.groupo())
+					
 					var value = body.slice(10)
 					var group = await hexa.groupMetadata(from)
 					var member = group['participants']
@@ -5012,7 +5012,7 @@ case `${prefix}spam|5`:
                //   //if (isBanned) return reply(ind.baned())
 			//	//if (!isRegistered) return reply(ind.noregis())
 				//if (!isPrem) return reply(ind.premium())
-					if (!isGroup) return reply(ind.groupo())
+					
 					var value = body.slice(11)
 					var group = await hexa.groupMetadata(from)
 					var member = group['participants']
@@ -5823,7 +5823,7 @@ case `${prefix}ambil`:
 //=====================================BATES NGAB=====================================\\
 //groupmenu
                 case `${prefix}nobadword`:
-                if (!isGroup) return reply(ind.groupo())
+                
               ////
                 if (args.length < 1) return reply('1 untuk menyalakan, 0 untuk mematikan')
                 if (args[0] === '1') {
@@ -5916,7 +5916,7 @@ case `${prefix}ambil`:
                 }
             break
 case `${prefix}welcome`:
-				if (!isGroup) return reply(ind.groupo())
+				
 				
 				if (args.length < 1) return reply('Mengaktifkan tekan 1, Menonaktif tekan 0')
 				if (Number(args[0]) === 1) {
